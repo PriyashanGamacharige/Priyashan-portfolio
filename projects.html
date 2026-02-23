@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- fevicon -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Assets/favicon-16x16.png">
+    <link rel="manifest" href="Assets/site.webmanifest">  
+
+
+
+    <title>Projects by Priyashan Gamacharige | Portfolio</title>
+<meta name="description" content="Explore projects developed by Priyashan Gamacharige, including networking, cybersecurity, AI, and web development projects.">
+<meta name="keywords" content="Priyashan Gamacharige, Projects, Portfolio, Networking, Cybersecurity, AI, Web Development">
+<meta name="author" content="Priyashan Gamacharige">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #1f242d;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            visibility: hidden;
+            opacity: 0;
+            animation: show-content 1.5s linear forwards;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes show-content {
+            100% {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .navbar .logo {
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .navbar ul {
+            display: flex;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            margin-left: 35px;
+        }
+
+        .navbar ul li a {
+            font-size: 20px;
+            font-weight: 500;
+            transition: .5s;
+        }
+
+        .navbar ul li:hover a,
+        .navbar ul li.active a {
+            color: #7cf03d;
+        }
+
+        /* Bars Animation */
+        .bars-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: -1;
+        }
+
+        .bars-animation .bar {
+            width: 100%;
+            height: 100%;
+            background: #1f242d;
+            transform: translateY(-100%);
+            animation: show-bars .5s ease-in-out forwards;
+            animation-delay: calc(.1s * var(--i));
+        }
+
+        @keyframes show-bars {
+            100% {
+                transform: translateY(0%);
+            }
+        }
+
+        /* Projects Section */
+        .projects-section {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            padding: 150px 5% 50px;
+            color: #fff;
+            visibility: hidden;
+            opacity: 0;
+            animation: show-content 1.5s linear forwards;
+            animation-delay: 1.6s;
+        }
+
+        .projects-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .projects-text h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .projects-text h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #7cf03d;
+        }
+
+        .projects-text p {
+            font-size: 16px;
+            margin: 10px 0 25px;
+            line-height: 1.6;
+        }
+
+        .projects-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .projects-img .img-box {
+            position: relative;
+            width: 32vw;
+            height: 32vw;
+            min-width: 300px;
+            min-height: 300px;
+            max-width: 400px;
+            max-height: 400px;
+            border-radius: 50%;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .projects-img .img-box::before,
+        .projects-img .img-box::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: conic-gradient(transparent, transparent, transparent, #7cf03d);
+            animation: rotate-border 10s linear infinite;
+        }
+
+        .projects-img .img-box::after {
+            animation-delay: -5s;
+        }
+
+        @keyframes rotate-border {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .projects-img .img-box .img-item {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #1f242d;
+            border-radius: 50%;
+            border: .1px solid #1f242d;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .projects-img .img-box .img-item img {
+            position: absolute;
+            top: 30px;
+            display: block;
+            width: 85%;
+            object-fit: cover;
+            mix-blend-mode: lighten;
+        }
+
+        /* Projects Container */
+        .projects-container {
+            padding: 50px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .projects-container h1 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #7cf03d;
+        }
+
+        /* Project Filter */
+        .project-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            background: transparent;
+            border: 1px solid #7cf03d;
+            color: #7cf03d;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: #7cf03d;
+            color: #1f242d;
+        }
+
+        /* Projects Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background: rgba(31, 36, 45, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #7cf03d;
+            transition: all 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(124, 240, 61, 0.2);
+        }
+
+        .project-img-container {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #1f242d;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img-container img {
+            transform: scale(1.1);
+        }
+
+        .project-tags {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .project-tag {
+            background: rgba(124, 240, 61, 0.8);
+            color: #1f242d;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .project-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #7cf03d;
+        }
+
+        .project-content p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tech-item {
+            background: rgba(124, 240, 61, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid #7cf03d;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-3px);
+            background: rgba(124, 240, 61, 0.3);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: #7cf03d;
+            color: #1f242d;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            justify-content: center;
+            margin-top: auto;
+        }
+
+        .project-link i {
+            font-size: 18px;
+        }
+
+        .project-link:hover {
+            background: transparent;
+            color: #7cf03d;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .projects-content {
+                flex-direction: column;
+            }
+
+            .projects-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+
+            .projects-img .img-box {
+                width: 60vw;
+                height: 60vw;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-text h1 {
+                font-size: 40px;
+            }
+            
+            .projects-text h2 {
+                font-size: 24px;
+            }
+            
+            .project-img-container {
+                height: 180px;
+            }
+
+            .navbar ul li {
+                margin-left: 20px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .projects-text h1 {
+                font-size: 36px;
+            }
+            
+            .projects-text h2 {
+                font-size: 22px;
+            }
+            
+            .projects-img .img-box {
+                width: 80vw;
+                height: 80vw;
+                min-width: 250px;
+                min-height: 250px;
+            }
+            
+            .project-content h3 {
+                font-size: 20px;
+            }
+            
+            .project-link {
+                padding: 6px 15px;
+                font-size: 14px;
+            }
+
+            .navbar ul li a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo" 
+   style="font-size: 32px; 
+          font-weight: bold; 
+          color: #000000; 
+          text-decoration: none; 
+           text-shadow: -1px -1px 0 #ffffff,  
+                       1px -1px 0 #ffffff,
+                      -1px  1px 0 #ffffff,
+                       1px  1px 0 #ffffff,
+                      -2px -2px 0 #ff0000,  
+                       2px -2px 0 #ff0000,
+                      -2px  2px 0 #ff0000,
+                       2px  2px 0 #ff0000;">
+  PRIYASHAN
+</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li class="active"><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="bars-animation">
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div> 
+    </div>
+
+    <section class="projects-section">
+        <div class="projects-content">
+            <div class="projects-text">
+                <h1>My Projects</h1>
+                <h2>Technical Showcase</h2>
+                <p>Here are some of my technical projects that demonstrate my skills in networking, web development, cybersecurity. Each project was an opportunity to learn new technologies and solve real world problems.</p>
+                <p>Exploring networking, cybersecurity, cloud, and web, these projects highlight my skills and passion for problem solving</p>
+            </div>
+            
+            <div class="projects-img">
+                <div class="img-box">
+                    <div class="img-item">
+                        <img src="Assets/home.png" alt="Project Showcase">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-container">
+        <h1>Featured Projects</h1>
+        
+        <div class="project-filter">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="network">Networking</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
+           
+        </div>
+        
+        <div class="project-grid">
+            <div class="project-card" data-category="cybersecurity">
+                <div class="project-img-container">
+                    <img src="Assets/acl(ex).jpg" alt="acl">
+                    <!-- <div class="project-tags">
+                        <span class="project-tag">Cybersecurity</span>
+                        <span class="project-tag">Penetration Testing</span>
+                    </div>-->
+                </div>
+                <div class="project-content">
+                    <h3>Accses Control List(Extended ACLs)</h3>
+                    <p>CoConfigured Extended Access Control Lists (ACLs) on Cisco routers to provide advanced traffic filtering and network security. Applied rules based on source/destination IP addresses, protocols, and ports (e.g., HTTP, FTP, ICMP). Tested scenarios to allow legitimate traffic while blocking unauthorized access, ensuring precise network control.</p>
+                    <div class="project-tech">
+                        <span class="tech-item">Cisco Packet Tracer</span>
+                        <span class="tech-item">Cisco IOS CLI</span>
+                        <span class="tech-item">Protocols (TCP, UDP, ICMP, HTTP, FTP)</span>
+                    </div>
+                    <a href="https://github.com/PriyashanGamacharige/Accses-Control-List-Extended-ACLs-" target="_blank" rel="noopener noreferrer"  class="project-link">
+                        <i class='bx bx-link-external'></i> View Details
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="web">
+                <div class="project-img-container">
+                    <img src="Assets/webfull.png" alt="E-commerce Security Project">
+                    <!--<div class="project-tags">
+                        <span class="project-tag">Web Development</span>
+                        <span class="project-tag">Security</span>
+                    </div>-->
+                </div>
+                <div class="project-content">
+                    <h3>Fullstack Educational Institute Website Project</h3>
+                    <p>Developed a full-stack web application for an educational institute using HTML, CSS, PHP, and MySQL. Implemented features for student registration, data filtering, and record removal, allowing administrators to manage student information efficiently. Designed a responsive front-end interface and connected it with a secure backend database, ensuring smooth CRUD operations and an interactive user experience.</p>
+                    <div class="project-tech">
+                        <span class="tech-item">HTML, CSS</span>
+                        <span class="tech-item">PHP</span>
+                        <span class="tech-item">MySQL</span>
+                        <span class="tech-item">Development Environment : WAMP</span>
+                    </div>
+                     <a href="https://github.com/PriyashanGamacharige/Fullstack_Web_Project" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <i class='bx bx-code-alt'></i> View Code
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="network">
+                <div class="project-img-container">
+                    <img src="Assets/stro.png" alt="Network Design Project">
+                    <!--<div class="project-tags">
+                        <span class="project-tag">Networking</span>
+                        <span class="project-tag">Cisco</span>
+                    </div>-->
+                </div>
+                <div class="project-content">
+                    <h3>Static Routing</h3>
+                    <p>Configured static routing on Cisco routers to enable communication between multiple networks without using dynamic routing protocols. Defined and applied static routes manually for different subnets, ensuring accurate path selection and efficient packet delivery. Tested connectivity using ping and traceroute, verifying end-to-end communication across the network.</p><br>
+                    <div class="project-tech">
+                        <span class="tech-item">Cisco Packet Tracer</span>
+                        <span class="tech-item">Cisco IOS CLI</span>
+                        <span class="tech-item">Routing Fundamentals (IPv4/IPv6)</span>
+                    </div>
+                    <a href="https://github.com/PriyashanGamacharige/Cisco-Packet-Tracer-Lab" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <i class='bx bx-link-external'></i> View Details
+                    </a>
+                </div>
+            </div>
+ 
+                 
+            <div class="project-card" data-category="network">
+                <div class="project-img-container">
+                    <img src="Assets/dyr.png" alt="Network Design Project">
+                    <!--<div class="project-tags">
+                        <span class="project-tag">Networking</span>
+                        <span class="project-tag">Cisco</span>
+                    </div>-->
+                </div>
+                <div class="project-content">
+                    <h3>Dynamic Routing(EIGRP)</h3>
+                    <p>Implemented and configured Enhanced Interior Gateway Routing Protocol (EIGRP) on Cisco routers to achieve efficient and scalable dynamic routing within an enterprise network. Tuned EIGRP metrics and verified neighbor adjacency formation. Tested route propagation, load balancing, and failover by simulating network topology changes, ensuring reliable and optimized connectivity.</p><br>
+                    <div class="project-tech">
+                        <span class="tech-item">Cisco Packet Tracer</span>
+                        <span class="tech-item">Cisco IOS CLI</span>
+                        <span class="tech-item">EIGRP (IPv4/IPv6)</span>
+                    </div>
+                    <a href="https://github.com/PriyashanGamacharige/Dynamic-Routing-EIGRP-" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <i class='bx bx-link-external'></i> View Details
+                    </a>
+                </div>
+            </div>
+            
+
+ <div class="project-card" data-category="network">
+                <div class="project-img-container">
+                    <img src="Assets/dyr.png" alt="Network Design Project">
+                    <!--<div class="project-tags">
+                        <span class="project-tag">Networking</span>
+                        <span class="project-tag">Cisco</span>
+                    </div>-->
+                </div>
+                <div class="project-content">
+                    <h3>Dynamic Routing(OSPF)</h3>
+                    <p>Configured and implemented Open Shortest Path First (OSPF) dynamic routing protocol on Cisco routers to enable efficient routing in a multi-area network. Established OSPF neighbor relationships, assigned router IDs, and optimized link-state advertisements. Verified route propagation and network convergence using show commands and simulated topology changes to ensure redundancy and reliability.</p>
+                    <div class="project-tech">
+                        <span class="tech-item">Cisco Packet Tracer</span>
+                        <span class="tech-item">Cisco IOS CLI</span>
+                        <span class="tech-item">OSPF (Single-Area & Multi-Area, IPv4/IPv6)</span>
+                    </div>
+                    <a href="https://github.com/PriyashanGamacharige/Dynamic-Routing-OSPF-" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <i class='bx bx-link-external'></i> View Details
+                    </a>
+                </div>
+            </div>
+
+           
+ <div class="project-card" data-category="network">
+                <div class="project-img-container">
+                    <img src="Assets/vlanR.png" alt="Network Design Project">
+                    <!--<div class="project-tags">
+                        <span class="project-tag">Networking</span>
+                        <span class="project-tag">Cisco</span>
+                    </div>-->
+                </div>
+                <div class="project-content">
+                    <h3>Inter VLAN(Router on a stick)</h3>
+                    <p>Configured Inter-VLAN routing using the Router-on-a-Stick method to enable communication between multiple VLANs in a switched network. Implemented sub-interfaces on a single physical router interface, assigned IP addresses, and configured trunk links between the router and switch. Verified successful inter-VLAN communication through testing with end devices across different VLANs.</p><br>
+                    <div class="project-tech">
+                        <span class="tech-item">Cisco Packet Tracer</span>
+                        <span class="tech-item">Cisco IOS CLI</span>
+                        <span class="tech-item">VLANs,Trunking(802.1Q),Sub-interfaces</span>
+                    </div>
+                    <a href="https://github.com/PriyashanGamacharige/Inter-VLAN-_Router-on-a-stick" target="_blank" rel="noopener noreferrer"  class="project-link">
+                        <i class='bx bx-link-external'></i> View Details
+                    </a>
+                </div>
+            </div>
+
+ <div class="project-card" data-category="network">
+                <div class="project-img-container">
+                    <img src="Assets/vlanml.png" alt="Network Design Project">
+                    <!--<div class="project-tags">
+                        <span class="project-tag">Networking</span>
+                        <span class="project-tag">Cisco</span>
+                    </div>-->
+                </div>
+                <div class="project-content">
+                    <h3>Inter VLAN(Multilayer Switch)</h3>
+                    <p>Implemented Inter-VLAN routing using a Multilayer Switch to enable communication between multiple VLANs without the need for an external router. Configured VLAN interfaces (SVIs), assigned IP addresses, and enabled routing on the switch. Tested connectivity between devices in different VLANs to ensure seamless inter-VLAN communication and optimized internal network performance.</p>
+                    <div class="project-tech">
+                        <span class="tech-item">Cisco Packet Tracer</span>
+                        <span class="tech-item">Cisco IOS CLI</span>
+                        <span class="tech-item">VLANs, SVIs, Layer 3 Switching</span>
+                    </div>
+                    <a href="https://github.com/PriyashanGamacharige/Inter-VLAN_Multilayer-Switch" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <i class='bx bx-link-external'></i> View Details
+                    </a>
+                </div>
+            </div>
+
+<div class="project-card" data-category="network">
+                <div class="project-img-container">
+                    <img src="Assets/gre.png" alt="Network Design Project">
+                    <!--<div class="project-tags">
+                        <span class="project-tag">Networking</span>
+                        <span class="project-tag">Cisco</span>
+                    </div>-->
+                </div>
+                <div class="project-content">
+                    <h3>GRE Tunnel</h3><br>
+                    <p>Designed and configured a Generic Routing Encapsulation (GRE) tunnel between two remote networks to enable secure and transparent routing over an untrusted network. Configured tunnel interfaces, assigned IP addresses, and established routing protocols over the tunnel to ensure end-to-end connectivity. Verified tunnel functionality using ping, traceroute, and traffic simulations.</p><br><br>
+                    <div class="project-tech">
+                        <span class="tech-item">Cisco Packet Tracer</span>
+                        <span class="tech-item">Cisco IOS CLI</span>
+                        <span class="tech-item">GRE Tunneling, Routing Protocols</span>
+                    </div>
+                    <a href="https://github.com/PriyashanGamacharige/GRE-Tunnel" target="_blank" rel="noopener noreferrer"  class="project-link">
+                        <i class='bx bx-link-external'></i> View Details
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="cybersecurity">
+                <div class="project-img-container">
+                    <img src="Assets/acl(std).jpg" alt="Accses Control List(Standard ACLs)">
+                    <!-- <div class="project-tags">
+                        <span class="project-tag">Cybersecurity</span>
+                        <span class="project-tag">Malware Analysis</span>
+                    </div>-->
+                </div>
+                <div class="project-content">
+                    <h3>Accses Control List(Standard ACLs)</h3>
+                    <p>Implemented Standard Access Control Lists (ACLs) on Cisco routers to control traffic based on source IP addresses. Configured ACL rules to permit or deny specific hosts and networks, enhancing basic security and traffic filtering within the LAN. Verified functionality using Cisco Packet Tracer simulations to ensure correct packet forwarding.</p><br><br><br>
+                    <div class="project-tech">
+                        <span class="tech-item">Cisco Packet Tracer</span>
+                        <span class="tech-item">Cisco IOS CLI</span>
+                        
+                    </div>
+                    <a href="https://github.com/PriyashanGamacharige/Accses-Control-List-Standard-ACLs-" target="_blank" rel="noopener noreferrer"  class="project-link">
+                        <i class='bx bx-link-external'></i> View Details
+                    </a>
+                </div>
+            </div>
+            
+
+   <div class="project-card" data-category="cybersecurity">
+                <div class="project-img-container">
+                    <img src="Assets/vpn.png" alt="vpn">
+                    <!-- <div class="project-tags">
+                        <span class="project-tag">Cybersecurity</span>
+                        <span class="project-tag">Malware Analysis</span>
+                    </div>-->
+                </div>
+                <div class="project-content">
+                    <h3>IPsec VPN tunnel</h3><br>
+                    <p>Designed and implemented a secure IPsec VPN tunnel between two branch offices to ensure encrypted communication over an untrusted network. Configured ISAKMP/IKE Phase 1 and Phase 2 policies, applied transform sets, and established crypto maps on Cisco routers. Verified end-to-end secure connectivity through ping, traceroute, and packet capture analysis.</p>
+                    <div class="project-tech">
+                        <span class="tech-item">Cisco Packet Tracer</span>
+                        <span class="tech-item">Cisco IOS CLI</span>
+                        <span class="tech-item">IPsec Protocols (IKE, ISAKMP, ESP, AH)</span>
+                    </div>
+                    <a href="https://github.com/PriyashanGamacharige/IPsec-VPN-tunnel" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <i class='bx bx-link-external'></i> View Details
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="web">
+                <div class="project-img-container">
+                    <img src="Assets/portfolio.png" alt="Portfolio Website Project">
+                   <!-- <div class="project-tags">
+                        <span class="project-tag">Web Development</span>
+                        <span class="project-tag">Design</span>
+                    </div>-->
+                </div>
+                <div class="project-content">
+                    <h3>Personal Portfolio Website</h3><br>
+                    <p>Designed and developed a responsive portfolio website to showcase my skills, projects, certifications, and contact information. Implemented modern CSS animations, hover effects, and interactive elements for an engaging user experience. Integrated a functional contact form and organized project sections with filters for easy navigation. Built with HTML, CSS, and JavaScript, ensuring a clean, professional design that works seamlessly across desktops, tablets, and mobile devices.</p>
+
+                    <div class="project-tech">
+                        <span class="tech-item">HTML5</span>
+                        <span class="tech-item">CSS3</span>
+                        <span class="tech-item">JavaScript</span>
+                    </div>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <i class='bx bx-code-alt'></i> View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Filter projects
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Add tilt effect to circular image
+        const imgBox = document.querySelector('.img-box');
+        
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            if(imgBox) {
+                imgBox.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            }
+        });
+
+        // Reset position when mouse leaves
+        document.addEventListener('mouseleave', () => {
+            if(imgBox) {
+                imgBox.style.transform = 'rotateY(0) rotateX(0)';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- fevicon -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Assets/favicon-16x16.png">
+    <link rel="manifest" href="Assets/site.webmanifest">  
+
+    <title>Blog by Priyashan Gamacharige | Networking, Cybersecurity & Tech</title>
+<meta name="description" content="Read the latest articles and insights by Priyashan Gamacharige on networking, cybersecurity, AI, web development, and technology trends.">
+<meta name="keywords" content="Priyashan Gamacharige, Blog, Networking, Cybersecurity, AI, Web Development, Technology, Articles">
+<meta name="author" content="Priyashan Gamacharige">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #1f242d;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            visibility: hidden;
+            opacity: 0;
+            animation: show-content 1.5s linear forwards;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes show-content {
+            100% {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .navbar .logo {
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .navbar ul {
+            display: flex;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            margin-left: 35px;
+        }
+
+        .navbar ul li a {
+            font-size: 20px;
+            font-weight: 500;
+            transition: .5s;
+        }
+
+        .navbar ul li:hover a,
+        .navbar ul li.active a {
+            color: #7cf03d;
+        }
+
+        /* Bars Animation */
+        .bars-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: -1;
+        }
+
+        .bars-animation .bar {
+            width: 100%;
+            height: 100%;
+            background: #1f242d;
+            transform: translateY(-100%);
+            animation: show-bars .5s ease-in-out forwards;
+            animation-delay: calc(.1s * var(--i));
+        }
+
+        @keyframes show-bars {
+            100% {
+                transform: translateY(0%);
+            }
+        }
+
+        /* Blog Section */
+        .blog-section {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            padding: 150px 5% 50px;
+            color: #fff;
+            visibility: hidden;
+            opacity: 0;
+            animation: show-content 1.5s linear forwards;
+            animation-delay: 1.6s;
+        }
+
+        .blog-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .blog-text h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .blog-text h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #7cf03d;
+        }
+
+        .blog-text p {
+            font-size: 16px;
+            margin: 10px 0 25px;
+            line-height: 1.6;
+        }
+
+        .blog-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .blog-img .img-box {
+            position: relative;
+            width: 32vw;
+            height: 32vw;
+            min-width: 300px;
+            min-height: 300px;
+            max-width: 400px;
+            max-height: 400px;
+            border-radius: 50%;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .blog-img .img-box::before,
+        .blog-img .img-box::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: conic-gradient(transparent, transparent, transparent, #7cf03d);
+            animation: rotate-border 10s linear infinite;
+        }
+
+        .blog-img .img-box::after {
+            animation-delay: -5s;
+        }
+
+        @keyframes rotate-border {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .blog-img .img-box .img-item {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #1f242d;
+            border-radius: 50%;
+            border: .1px solid #1f242d;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .blog-img .img-box .img-item img {
+            position: absolute;
+            top: 30px;
+            display: block;
+            width: 85%;
+            object-fit: cover;
+            mix-blend-mode: lighten;
+        }
+
+        /* Blog Posts Container */
+        .blog-container {
+            padding: 50px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .blog-container h1 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #7cf03d;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .blog-card {
+            background: rgba(31, 36, 45, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(124, 240, 61, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(124, 240, 61, 0.2);
+            border-color: #7cf03d;
+        }
+
+        .blog-card-img {
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-card-img img {
+            width: 95%;
+            height: 95%;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+        }
+
+        .blog-card:hover .blog-card-img img {
+            transform: scale(1.05);
+        }
+
+        .blog-card-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #7cf03d;
+        }
+
+        .blog-card-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .blog-card:hover .blog-card-content h3 {
+            color: #7cf03d;
+        }
+
+        .blog-card-content p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            color: #ddd;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .blog-tag {
+            background: rgba(124, 240, 61, 0.1);
+            padding: 6px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(124, 240, 61, 0.3);
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .blog-tag:hover {
+            transform: translateY(-3px);
+            background: rgba(124, 240, 61, 0.3);
+            border-color: #7cf03d;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 25px;
+            background: transparent;
+            color: #7cf03d;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            justify-content: center;
+            margin-top: auto;
+            border: 1px solid #7cf03d;
+        }
+
+        .read-more i {
+            font-size: 18px;
+        }
+
+        .read-more:hover {
+            background: #7cf03d;
+            color: #1f242d;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(124, 240, 61, 0.3);
+        }
+
+        /* Sidebar */
+        .blog-sidebar {
+            background: rgba(31, 36, 45, 0.8);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(124, 240, 61, 0.3);
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #7cf03d;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(124, 240, 61, 0.3);
+        }
+
+        .popular-posts {
+            margin-bottom: 30px;
+        }
+
+        .popular-post {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+            transition: all 0.3s ease;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .popular-post:hover {
+            background: rgba(124, 240, 61, 0.1);
+            transform: translateX(5px);
+        }
+
+        .popular-post img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+            border: 1px solid rgba(124, 240, 61, 0.3);
+        }
+
+        .popular-post h4 {
+            font-size: 14px;
+            transition: color 0.3s ease;
+            flex: 1;
+        }
+
+        .popular-post:hover h4 {
+            color: #7cf03d;
+        }
+
+        .categories ul {
+            list-style: none;
+        }
+
+        .categories li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed rgba(124, 240, 61, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .categories li:hover {
+            transform: translateX(5px);
+        }
+
+        .categories a {
+            transition: color 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .categories a:hover {
+            color: #7cf03d;
+        }
+
+        .categories span {
+            background: rgba(124, 240, 61, 0.1);
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            border: 1px solid rgba(124, 240, 61, 0.2);
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 992px) {
+            .blog-main-container {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .blog-content {
+                flex-direction: column;
+            }
+
+            .blog-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+
+            .blog-img .img-box {
+                width: 60vw;
+                height: 60vw;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-text h1 {
+                font-size: 40px;
+            }
+            
+            .blog-text h2 {
+                font-size: 24px;
+            }
+            
+            .blog-card-img {
+                height: 200px;
+            }
+
+            .navbar ul li {
+                margin-left: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .blog-text h1 {
+                font-size: 36px;
+            }
+            
+            .blog-text h2 {
+                font-size: 22px;
+            }
+            
+            .blog-img .img-box {
+                width: 80vw;
+                height: 80vw;
+                min-width: 250px;
+                min-height: 250px;
+            }
+            
+            .blog-card-content h3 {
+                font-size: 20px;
+            }
+            
+            .read-more {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+
+            .navbar ul li a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo" 
+   style="font-size: 32px; 
+          font-weight: bold; 
+          color: #000000; 
+          text-decoration: none; 
+          text-shadow: -1px -1px 0 #ffffff,  
+                       1px -1px 0 #ffffff,
+                      -1px  1px 0 #ffffff,
+                       1px  1px 0 #ffffff,
+                      -2px -2px 0 #ff0000,  
+                       2px -2px 0 #ff0000,
+                      -2px  2px 0 #ff0000,
+                       2px  2px 0 #ff0000;">
+  PRIYASHAN
+</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li class="active"><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="bars-animation">
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div> 
+    </div>
+
+    <section class="blog-section">
+        <div class="blog-content">
+            <div class="blog-text">
+                <h1>Blog</h1>
+                <h2>Technical Insights</h2>
+                <p>Explore my articles and tutorials on IoT, cybersecurity, and emerging technologies. I share my learning journey, technical insights, and practical guides to help others in the tech community.</p>
+                <p>From security best practices to hands-on tutorials, these posts represent my knowledge and experience in the field.</p>
+            </div>
+            
+            <div class="blog-img">
+                <div class="img-box">
+                    <div class="img-item">
+                        <img src="Assets/home.png" alt="Blog Insights">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-container">
+        <h1>Latest Articles</h1>
+        
+        <div class="blog-main-container">
+            <div class="blog-posts">
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-card-img">
+                            <img src="Assets/net2.jpg" alt="network">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span><i class='bx bx-calendar'></i> January 29, 2025</span>
+                            </div>
+                            <h3>Key Networking Concepts Explained</h3>
+                            <p>Understanding networking is crucial in today's digital world. Networking connects devices, enabling communication and data exchange. This article explains fundamental concepts of networking, making it simple and accessible for everyone, from beginners to seasoned professionals.</p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">Networking Concepts</span>
+                                <span class="blog-tag">OSI Model</span>
+                                <span class="blog-tag">Network Fundamentals</span>
+                            </div>
+                            <a href="#" class="read-more">
+                                <i class='bx bx-book-reader'></i> Read More
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-card-img">
+                            <img src="Assets/net1.jpg" alt="network">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span><i class='bx bx-calendar'></i> January 22, 2025</span>
+                            </div>
+                            <h3>Networking Basics: A Beginner's Guide</h3>
+                            <p>This guide introduces the basic concepts of networking, helping beginners understand how computers and devices communicate with each other. It covers various types of networks, essential components, and fundamental principles to provide a solid foundation for anyone interested in networking.</p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">Computer Networking</span>
+                                <span class="blog-tag">Protocols</span>
+                                <span class="blog-tag">Networking Basic</span>
+                            </div>
+                            <a href="#" class="read-more">
+                                <i class='bx bx-book-reader'></i> Read More
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-card-img">
+                            <img src="Assets/iot.jpg" alt="iot">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span><i class='bx bx-calendar'></i> January 18, 2025</span>
+                            </div>
+                            <h3>Internet of Things (IoT) Networking: Connecting Devices</h3>
+                            <p>The Internet of Things (IoT) is revolutionizing how we connect devices, making our lives easier and smarter. By linking everyday objects to the internet, IoT networking enables seamless communication, data sharing, and automation. This article explores the various aspects of IoT networking and its implications for the future.</p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">IoT</span>
+                                <span class="blog-tag">Smart Devices</span>
+                                <span class="blog-tag">IoT Networking</span>
+                            </div>
+                            <a href="#" class="read-more">
+                                <i class='bx bx-book-reader'></i> Read More
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-card-img">
+                            <img src="Assets/cyb.jpg" alt="IoT Hacking">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span><i class='bx bx-calendar'></i> January 15, 2025</span>
+                            </div>
+                            <h3>Cybersecurity Basics for Beginners</h3><br>
+                            <p>Cybersecurity is vital in our digital world, protecting personal and sensitive information from unauthorized access and attacks. This article aims to provide beginners with a solid understanding of the fundamental concepts of cybersecurity, essential practices, and tools to stay safe online.</p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">Cybersecurity</span>
+                                <span class="blog-tag">Security</span>
+                                <span class="blog-tag">Digital Safety</span>
+                                <span class="blog-tag">Cyber Threats</span>
+                            </div>
+                            <a href="#" class="read-more">
+                                <i class='bx bx-book-reader'></i> Read More
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-card-img">
+                            <img src="Assets/aia.png" alt="ai">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span><i class='bx bx-calendar'></i> January 12, 2025</span>
+                            </div>
+                            <h3>Understanding Artificial Intelligence Applications</h3>
+                            <p>Artificial Intelligence (AI) is transforming the way we live and work. From healthcare to finance, AI applications are becoming essential tools in various industries. This article will explore the different applications of AI, providing a comprehensive understanding of its impact on our daily lives and future advancements.</p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">AI Applications</span>
+                                <span class="blog-tag">AI</span>
+                                <span class="blog-tag">Future of AI</span>
+                                <span class="blog-tag">AI Technology</span>
+                            </div>
+                            <a href="#" class="read-more">
+                                <i class='bx bx-book-reader'></i> Read More
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-card-img">
+                            <img src="Assets/aib.jpg" alt="ai">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span><i class='bx bx-calendar'></i> January 5, 2025</span>
+                            </div>
+                            <h3>AI for Beginners: A Comprehensive Guide</h3>
+                            <p>Artificial Intelligence (AI) is a fascinating field that blends computer science, mathematics, and cognitive understanding. It’s reshaping how we interact with technology, offering new ways to solve problems and improve efficiency. In this guide, we will explore the essential aspects of AI, making it accessible for beginners.</p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">Artificial Intelligence</span>
+                                <span class="blog-tag">Trends</span>
+                                <span class="blog-tag">Future Tech</span>
+                            </div>
+                            <a href="#" class="read-more">
+                                <i class='bx bx-book-reader'></i> Read More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-sidebar">
+                <div class="blog-sidebar-content">
+                    <div class="popular-posts">
+                        <h3 class="sidebar-title">Popular Posts</h3>
+                        <div class="popular-post">
+                            <img src="Assets/net1.jpg" alt="IoT Hacking">
+                            <h4>Networking Basics: A Beginner's Guide</h4>
+                        </div>
+                        <div class="popular-post">
+                            <img src="Assets/cyb.jpg" alt="cyber">
+                            <h4>Cybersecurity Basics for Beginners</h4>
+                        </div>
+                        <div class="popular-post">
+                            <img src="Assets/aib.jpg" alt="ai">
+                            <h4>AI for Beginners: A Comprehensive Guide</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="categories">
+                        <h3 class="sidebar-title">Categories</h3>
+                        <ul>
+                            <li><a href="#">Computer Networking <span>12</span></a></li>
+                            <li><a href="#">Cybersecurity<span>8</span></a></li>
+                            <li><a href="#">Cloud Computing<span>5</span></a></li>
+                            <li><a href="#">Internet of Things(IoT)<span>7</span></a></li>
+                            <li><a href="#">Artificial Inteligence<span>10</span></a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add tilt effect to circular image
+        const imgBox = document.querySelector('.img-box');
+        
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            if(imgBox) {
+                imgBox.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            }
+        });
+
+        // Reset position when mouse leaves
+        document.addEventListener('mouseleave', () => {
+            if(imgBox) {
+                imgBox.style.transform = 'rotateY(0) rotateX(0)';
+            }
+        });
+    </script>
+</body>
+</html>

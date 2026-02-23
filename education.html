@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- fevicon -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Assets/favicon-16x16.png">
+    <link rel="manifest" href="Assets/site.webmanifest">  
+
+
+    <title>Education of Priyashan Gamacharige | ICT Undergraduate</title>
+<meta name="description" content="Learn about the education background of Priyashan Gamacharige – ICT undergraduate at University of Kelaniya, specializing in networking, cybersecurity, AI, and web development.">
+<meta name="keywords" content="Priyashan Gamacharige, Education, University of Kelaniya, ICT, Networking, Cybersecurity, AI, Web Development">
+<meta name="author" content="Priyashan Gamacharige">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #1f242d;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            visibility: hidden;
+            opacity: 0;
+            animation: show-content 1.5s linear forwards;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes show-content{
+            100%{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .navbar .logo{
+            font-size: 30px;
+            font-weight: 700; 
+        }
+
+        .navbar ul{
+            display: flex;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            margin-left: 35px;
+        }
+
+        .navbar ul li a {
+            font-size: 20px;
+            font-weight: 500;
+            transition: .5s;
+        }
+
+        .navbar ul li:hover a,
+        .navbar ul li.active a{
+            color: #7cf03d;
+        }
+
+        .education-section {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            padding: 150px 5% 50px;
+            color: #fff;
+            visibility: hidden;
+            opacity: 0;
+            animation: show-content 1.5s linear forwards;
+            animation-delay: 1.6s;
+        }
+
+        .education-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .education-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .education-text h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .education-text h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #7cf03d;
+        }
+
+        .education-text p {
+            font-size: 16px;
+            margin: 10px 0 25px;
+            line-height: 1.6;
+        }
+
+        .education-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .education-img .img-box {
+            position: relative;
+            width: 32vw;
+            height: 32vw;
+            min-width: 300px;
+            min-height: 300px;
+            max-width: 400px;
+            max-height: 400px;
+            border-radius: 50%;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .education-img .img-box::before,
+        .education-img .img-box::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: conic-gradient(transparent, transparent, transparent, #7cf03d);
+            transform: rotate(0deg);
+            animation: rotate-border 10s linear infinite;
+        }
+
+        .education-img .img-box::after {
+            animation-delay: -5s;
+        }
+
+        @keyframes rotate-border {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .education-img .img-box .img-item {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #1f242d;
+            border-radius: 50%;
+            border: .1px solid #1f242d;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .education-img .img-box .img-item img {
+            position: absolute;
+            top: 30px;
+            display: block;
+            width: 85%;
+            object-fit: cover;
+            mix-blend-mode: lighten;
+        }
+
+        .timeline-section {
+            padding: 50px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline-section h1 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #7cf03d;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: #7cf03d;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 25px 30px;
+            background: rgba(31, 36, 45, 0.8);
+            border-radius: 8px;
+            border: 1px solid #7cf03d;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #7cf03d;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(124, 240, 61, 0.2);
+        }
+
+        .timeline-content:hover::after {
+            width: 100%;
+        }
+
+        .institution-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+
+        .institution-logo {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 3px solid #7cf03d;
+            padding: 5px;
+            background: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .institution-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .timeline-content h2 {
+            color: #7cf03d;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 12px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #ddd;
+        }
+
+        .timeline-content p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .courses {
+            margin-top: 20px;
+        }
+
+        .courses h4 {
+            margin-bottom: 10px;
+            color: #7cf03d;
+            font-size: 16px;
+        }
+
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .course-item {
+            background: rgba(124, 240, 61, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid #7cf03d;
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: bounceIn 0.6s forwards;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            70% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .course-item:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 5px 15px rgba(124, 240, 61, 0.3);
+            background: rgba(124, 240, 61, 0.3);
+        }
+
+        .course-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(124, 240, 61, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: 0.6s;
+        }
+
+        .course-item:hover::after {
+            transform: translateX(100%);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: #1f242d;
+            border: 4px solid #7cf03d;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 0 0 0 rgba(124, 240, 61, 0.7); 
+            }
+            50% { 
+                transform: scale(1.1); 
+                box-shadow: 0 0 0 10px rgba(124, 240, 61, 0); 
+            }
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -16px;
+        }
+
+        .bars-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: -1;
+        }
+
+        .bars-animation .bar {
+            width: 100%;
+            height: 100%;
+            background: #1f242d;
+            transform: translateY(-100%);
+            animation: show-bars .5s ease-in-out forwards;
+            animation-delay: calc(.1s * var(--i));
+        }
+
+        @keyframes show-bars {
+            100% {
+                transform: translateY(0%);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .education-content {
+                flex-direction: column;
+            }
+
+            .education-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+
+            .education-img .img-box {
+                width: 60vw;
+                height: 60vw;
+            }
+
+            .timeline::before {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 15px;
+            }
+
+            .timeline-item:nth-child(even)::after {
+                left: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .education-text h1 {
+                font-size: 36px;
+            }
+
+            .education-text h2 {
+                font-size: 24px;
+            }
+
+            .education-img .img-box {
+                width: 80vw;
+                height: 80vw;
+                min-width: 250px;
+                min-height: 250px;
+            }
+            
+            .institution-header {
+                flex-direction: row;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .institution-logo {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 0;
+            }
+            
+            .timeline-content h2 {
+                font-size: 20px;
+            }
+            
+            .timeline-content h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo" 
+   style="font-size: 32px; 
+          font-weight: bold; 
+          color: #000000; 
+          text-decoration: none; 
+           text-shadow: -1px -1px 0 #ffffff,  
+                       1px -1px 0 #ffffff,
+                      -1px  1px 0 #ffffff,
+                       1px  1px 0 #ffffff,
+                      -2px -2px 0 #ff0000,  
+                       2px -2px 0 #ff0000,
+                      -2px  2px 0 #ff0000,
+                       2px  2px 0 #ff0000;">
+  PRIYASHAN
+</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="active"><a href="education.html">Education</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="bars-animation">
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div> 
+    </div>
+
+    <section class="education-section">
+        <div class="education-content">
+            <div class="education-text">
+                <h1>My Education</h1>
+                <h2>Academic Journey</h2>
+                <p>My academic path has been focused on building a strong foundation in information and communication technology, with specialized coursework in cybersecurity, networking, and software development.</p>
+                <p>From my early school days to my current university studies, I've consistently pursued excellence in STEM fields, developing both technical expertise and critical thinking skills.</p>
+            </div>
+            
+            <div class="education-img">
+                <div class="img-box">
+                    <div class="img-item">
+                        <img src="Assets/home.png" alt="Education Journey">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="timeline-section">
+        <h1>Educational Timeline</h1>
+        
+        <div class="timeline">
+            <div class="timeline-item" style="animation-delay: 0.2s;">
+                <div class="timeline-content">
+                    <div class="institution-header">
+                        <img src="Assets/kelaniya.png" 
+                             alt="University of Kelaniya" 
+                             class="institution-logo">
+                        <div>
+                            <h2>University of Kelaniya</h2>
+                            <h3>Bachelor of Information and Communication Technology</h3>
+                        </div>
+                    </div>
+                    <p>2023 - Present</p>
+                    <p>Currently pursuing a BICT degree specializing in Networking at the Faculty of Computing and Technology, and building knowledge and skills in the networking field.</p>
+                    <div class="courses">
+                        <h4>Relevant Coursework:</h4>
+                        <div class="course-list">
+                            <span class="course-item" style="animation-delay: 0.1s;">Networking</span>
+                            <span class="course-item" style="animation-delay: 0.2s;">Telecommunication</span>
+                            <span class="course-item" style="animation-delay: 0.3s;">IOT</span>
+                            <span class="course-item" style="animation-delay: 0.4s;">Database Systems</span>
+                            <span class="course-item" style="animation-delay: 0.5s;">Operating Systems</span>
+                            <span class="course-item" style="animation-delay: 0.6s;">Data Structures</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item" style="animation-delay: 0.4s;">
+                <div class="timeline-content">
+                    <div class="institution-header">
+                        <img src="Assets/cisco.png" 
+                             alt="Cisco" 
+                             class="institution-logo">
+                        <div>
+                            <h2>Cisco Networking Academy</h2>
+                            <h3>Network Profesional Certifications</h3>
+                        </div>
+                    </div>
+                    <p>2024 - Present</p>
+                    <p>Currently pursuing Cisco training, building knowledge and skills in the networking field.</p>
+                     <div class="courses">
+                        <h4>Courses:</h4>
+                        <div class="course-list">
+                            <span class="course-item" style="animation-delay: 0.7s;">Network Essentials</span>
+                            <span class="course-item" style="animation-delay: 0.8s;">Cybersecurity Essentials</span>
+                            <span class="course-item" style="animation-delay: 0.9s;">IT Essentials</span>
+                            <span class="course-item" style="animation-delay: 0.10s;">Introduction to Cybersecurity</span>
+                            <span class="course-item" style="animation-delay: 0.11s;">Networking Basic</span>
+                            <span class="course-item" style="animation-delay: 0.12s;">Introduction to IOT</span>
+                           
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="timeline-item" style="animation-delay: 0.6s;">
+                <div class="timeline-content">
+                    <div class="institution-header">
+                        <img src="Assets/rcc.jpeg" 
+                             alt="Rajapaksha Central College" 
+                             class="institution-logo">
+                        <div>
+                            <h2>Rajapaksha Central College - Weeraketiya</h2>
+                            <h3>Advanced Level Examination - Technology Stream</h3>
+                        </div>
+                    </div>
+                    <p>2018 - 2021</p>
+                    <p>Results: A,B,C ( Engineering Technology, Scince For Technolgy, and ICT )</p>
+                    <div class="courses">
+                        <h4>Activities:</h4>
+                        <div class="course-list">
+                            <span class="course-item" style="animation-delay: 0.7s;">IT Society</span>
+                            <span class="course-item" style="animation-delay: 0.8s;">Science Club</span>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item" style="animation-delay: 0.8s;">
+                <div class="timeline-content">
+                    <div class="institution-header">
+                        <img src="Assets/kns.jpeg" 
+                             alt="Katuwana National School" 
+                             class="institution-logo">
+                        <div>
+                            <h2>Katuwana National School</h2>
+                            <h3>Ordinary Level Examination</h3>
+                        </div>
+                    </div>
+                    <p>2012 - 2017</p>
+                    <p>Results: 5A's, B, 2C's and S including Mathematics, Science, and English</p>
+                    <div class="courses">
+                        <h4>Activities:</h4>
+                        <div class="course-list">
+                            <span class="course-item" style="animation-delay: 1.0s;">Computer Club</span>
+                            <span class="course-item" style="animation-delay: 1.1s;">Science Society</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add slight 3D tilt effect to image on mouse move
+        const imgBox = document.querySelector('.img-box');
+        
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            imgBox.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Reset position when mouse leaves
+        document.addEventListener('mouseleave', () => {
+            imgBox.style.transform = 'rotateY(0) rotateX(0)';
+        });
+
+        // Animate timeline items when they come into view
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Set initial state for animation
+        timelineItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = `all 0.5s ease ${index * 0.2}s`;
+            observer.observe(item);
+        });
+
+        // Animate course items with staggered delay
+        const courseItems = document.querySelectorAll('.course-item');
+        courseItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1 + 0.5}s`;
+        });
+    </script>
+</body>
+</html>

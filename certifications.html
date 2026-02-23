@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- fevicon -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Assets/favicon-16x16.png">
+    <link rel="manifest" href="Assets/site.webmanifest">  
+
+
+<title>Certifications of Priyashan Gamacharige | Networking & Cybersecurity</title>
+<meta name="description" content="Explore the professional certifications of Priyashan Gamacharige, including Cisco, IBM, Huawei, and cybersecurity courses, showcasing skills in networking, AI, and web development.">
+<meta name="keywords" content="Priyashan Gamacharige, Certifications, Cisco, IBM, Huawei, Cybersecurity, Networking, AI, Web Development">
+<meta name="author" content="Priyashan Gamacharige">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #1f242d;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Updated Navbar to match education page */
+        .navbar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            visibility: hidden;
+            opacity: 0;
+            animation: show-content 1.5s linear forwards;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes show-content {
+            100% {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .navbar .logo {
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .navbar ul {
+            display: flex;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            margin-left: 35px;
+        }
+
+        .navbar ul li a {
+            font-size: 20px;
+            font-weight: 500;
+            transition: .5s;
+        }
+
+        .navbar ul li:hover a,
+        .navbar ul li.active a {
+            color: #7cf03d;
+        }
+
+        /* Bars Animation */
+        .bars-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: -1;
+        }
+
+        .bars-animation .bar {
+            width: 100%;
+            height: 100%;
+            background: #1f242d;
+            transform: translateY(-100%);
+            animation: show-bars .5s ease-in-out forwards;
+            animation-delay: calc(.1s * var(--i));
+        }
+
+        @keyframes show-bars {
+            100% {
+                transform: translateY(0%);
+            }
+        }
+
+        /* Certifications Section */
+        .certifications-section {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            padding: 150px 5% 50px;
+            color: #fff;
+            visibility: hidden;
+            opacity: 0;
+            animation: show-content 1.5s linear forwards;
+            animation-delay: 1.6s;
+        }
+
+        .certifications-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .certifications-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .certifications-text h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .certifications-text h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #7cf03d;
+        }
+
+        .certifications-text p {
+            font-size: 16px;
+            margin: 10px 0 25px;
+            line-height: 1.6;
+        }
+
+        .certifications-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .certifications-img .img-box {
+            position: relative;
+            width: 32vw;
+            height: 32vw;
+            min-width: 300px;
+            min-height: 300px;
+            max-width: 400px;
+            max-height: 400px;
+            border-radius: 50%;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .certifications-img .img-box::before,
+        .certifications-img .img-box::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: conic-gradient(transparent, transparent, transparent, #7cf03d);
+            animation: rotate-border 10s linear infinite;
+        }
+
+        .certifications-img .img-box::after {
+            animation-delay: -5s;
+        }
+
+        @keyframes rotate-border {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .certifications-img .img-box .img-item {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #1f242d;
+            border-radius: 50%;
+            border: .1px solid #1f242d;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .certifications-img .img-box .img-item img {
+            position: absolute;
+            top: 30px;
+            display: block;
+            width: 85%;
+            object-fit: cover;
+            mix-blend-mode: lighten;
+        }
+
+        /* Certifications Grid */
+
+        .certifications-container {
+            padding: 50px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .certifications-container h1 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #7cf03d;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .certification-card {
+            background: rgba(31, 36, 45, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #7cf03d;
+            transition: all 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(124, 240, 61, 0.2);
+        }
+
+        .cert-img-container {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #1f242d;
+        }
+
+        .cert-img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .cert-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cert-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #7cf03d;
+            text-align: center;
+        }
+
+        .cert-content .issuer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+            justify-content: center;
+        }
+
+        .cert-content .issuer i {
+            margin-right: 8px;
+            color: #7cf03d;
+        }
+
+        .cert-content .date {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .cert-content p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .verify-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: #7cf03d;
+            color: #1f242d;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: auto;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .verify-btn i {
+            font-size: 18px;
+        }
+
+        .verify-btn:hover {
+            background: transparent;
+            color: #7cf03d;
+            transform: translateY(-2px);
+        }
+
+        /* Local Certifications Section */
+
+        .local-certifications-container {
+            padding: 50px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(31, 36, 45, 0.6);
+            border-top: 2px solid #4a8f29;
+            border-bottom: 2px solid #4a8f29;
+        }
+
+        .local-certifications-container h1 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #4a8f29;
+        }
+
+        .local-cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .local-certification-card {
+            background: rgba(31, 36, 45, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #4a8f29;
+            transition: all 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .local-certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(124, 240, 61, 0.3);
+        }
+
+        .local-cert-img-container {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #2a3039;
+        }
+
+        .local-cert-img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border: 1px solid #4a8f29;
+            border-radius: 5px;
+        }
+
+        .local-cert-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .local-cert-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #4a8f29;
+            text-align: center;
+        }
+
+        .local-cert-content .cert-id {
+            font-size: 13px;
+            color: #7cf03d;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            background: rgba(31, 36, 45, 0.7);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 0 auto 10px;
+        }
+
+        .local-cert-content .issuer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+            justify-content: center;
+        }
+
+        .local-cert-content .issuer i {
+            margin-right: 8px;
+            color: #4a8f29;
+        }
+
+        .local-cert-content .date {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .local-cert-content p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        /* Responsive Styles */
+
+        @media (max-width: 992px) {
+            .certifications-content {
+                flex-direction: column;
+            }
+
+            .certifications-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+
+            .certifications-img .img-box {
+                width: 60vw;
+                height: 60vw;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .certifications-text h1 {
+                font-size: 40px;
+            }
+            
+            .certifications-text h2 {
+                font-size: 24px;
+            }
+            
+            .cert-img-container, .local-cert-img-container {
+                height: 180px;
+            }
+
+            .navbar ul li {
+                margin-left: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .certifications-text h1 {
+                font-size: 36px;
+            }
+            
+            .certifications-text h2 {
+                font-size: 22px;
+            }
+            
+            .certifications-img .img-box {
+                width: 80vw;
+                height: 80vw;
+                min-width: 250px;
+                min-height: 250px;
+            }
+            
+            .cert-content h3, .local-cert-content h3 {
+                font-size: 20px;
+            }
+            
+            .verify-btn {
+                padding: 6px 15px;
+                font-size: 14px;
+            }
+
+            .navbar ul li a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bars-animation">
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div> 
+    </div>
+
+    <nav class="navbar">
+        <a href="#" class="logo" 
+   style="font-size: 32px; 
+          font-weight: bold; 
+          color: #000000; 
+          text-decoration: none; 
+          text-shadow: -1px -1px 0 #ffffff,  
+                       1px -1px 0 #ffffff,
+                      -1px  1px 0 #ffffff,
+                       1px  1px 0 #ffffff,
+                      -2px -2px 0 #ff0000,  
+                       2px -2px 0 #ff0000,
+                      -2px  2px 0 #ff0000,
+                       2px  2px 0 #ff0000;">
+  PRIYASHAN
+</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li class="active"><a href="certifications.html">Certifications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="certifications-section">
+        <div class="certifications-content">
+            <div class="certifications-text">
+                <h1>My Certifications</h1>
+                <h2>Professional Achievements</h2>
+                <p>These certifications validate my technical skills and knowledge in various domains of information technology and Networking. Each represents significant learning and practical application.</p>
+                <p>From networking fundamentals to advanced security concepts, I've pursued certifications that complement my academic education and demonstrate my commitment to professional development.</p>
+            </div>
+            
+            <div class="certifications-img">
+                <div class="img-box">
+                    <div class="img-item">
+                        <img src="Assets/home.png" alt="Certification Achievements">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certifications-container">
+        <h1>Digital Badges</h1>
+        
+        <div class="cert-grid">
+            <!-- CS50P: Introduction to Programming with Python -->
+<div class="certification-card">
+    <div class="cert-img-container">
+        <img src="Assets/edx.png" 
+             alt="CS50P Certification">
+    </div>
+    <div class="cert-content">
+        <h3>CS50P: Introduction to Programming with Python</h3>
+        <div class="issuer">
+            <i class='bx bxs-graduation'></i>
+            <span>edX</span>
+        </div>
+        <div class="date">
+           Date Issued: Jan 2026
+        </div>
+        <p>
+            An introduction to programming using Python, covering core computer science concepts, 
+            problem-solving techniques, data structures, SQL, and web development fundamentals.
+        </p>
+        <a href="https://www.credly.com/badges/d441ff5b-29af-4527-b6b1-40a68a92ff34/public_url" 
+           target="_blank" 
+           class="verify-btn">
+            <i class='bx bx-check-shield'></i> Verify Credential
+        </a>
+    </div>
+</div>
+            <!-- Oracle Cloud Infrastructure Architect  Associate -->
+            <div class="certification-card">
+                <div class="cert-img-container">
+                    <img src="Assets/OCIAA.png" 
+                         alt="OCI Certification">
+                </div>
+                <div class="cert-content">
+                    <h3>OCI Architect Associate</h3><br>
+                    <div class="issuer">
+                        <i class='bx bxs-cloud'></i>
+                        <span>Oracle</span>
+                    </div>
+                    <div class="date">
+                        Issued: Oct 2025 | Expires: Oct 2027
+                    </div><br>
+                    <p>Validates advanced skills in designing and deploying secure, scalable, and cost optimized solutions on Oracle Cloud Infrastructure (OCI).</p>
+                    <a href="https://www.credly.com/users/priyashan-gamacharige/badges#credly" 
+                       target="_blank" 
+                       class="verify-btn">
+                        <i class='bx bx-check-shield'></i> Verify on Credly
+                    </a>
+                </div>
+            </div>
+
+            <!-- ACE Aviatrix Multicloud Network Associate -->
+            <div class="certification-card">
+                <div class="cert-img-container">
+                    <img src="Assets/ACEA.png" 
+                         alt="Aviatrix Certification">
+                </div>
+                <div class="cert-content">
+                    <h3>ACE Aviatrix Multicloud Network Associate</h3>
+                    <div class="issuer">
+                        <i class='bx bxs-cloud'></i>
+                        <span>Aviatrix</span>
+                    </div>
+                    <div class="date">
+                        Issued: Oct 2025 | Expires: Oct 2028
+                    </div>
+                    <p>Validates skills in designing and managing secure multicloud networks using Aviatrix.</p>
+                    <a href="https://www.credly.com/users/priyashan-gamacharige/badges#credly" 
+                       target="_blank" 
+                       class="verify-btn">
+                        <i class='bx bx-check-shield'></i> Verify on Credly
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- NETWORK ESSENTIAL -->
+            <div class="certification-card">
+                <div class="cert-img-container">
+                    <img src="Assets/NETESS.png" alt="NETWORK ESSENTIAL">
+                </div>
+                <div class="cert-content">
+                    <h3>Networking Essential</h3>
+                    <div class="issuer">
+                        <i class='bx bxs-building-house'></i>
+                        <span>Cisco Networking Academy</span>
+                    </div>
+                    <div class="date">
+                        Date issued: January 27, 2025
+                    </div>
+                    <p>Validates ability to install, configure, operate, and troubleshoot medium-size networks.</p>
+                    <a href="https://www.credly.com/users/priyashan-gamacharige/badges#credly" 
+                       target="_blank" 
+                       class="verify-btn">
+                        <i class='bx bx-check-shield'></i> Verify on Credly
+                    </a>
+                </div>
+            </div>
+            
+            <!-- cybersecurity essential -->
+            <div class="certification-card">
+                <div class="cert-img-container">
+                    <img src="Assets/CSESS.png" alt="cybersecurity essential">
+                </div>
+                <div class="cert-content">
+                    <h3>Cybersecurity Essential</h3>
+                    <div class="issuer">
+                        <i class='bx bxs-building-house'></i>
+                        <span>Cisco Networking Academy</span>
+
+                    </div>
+                    <div class="date">
+                        Date issued: March 27, 2025
+                    </div>
+                    <p>Validates ability to identify, protect against, and respond to common cybersecurity threats and vulnerabilities</p>
+                    <a href="https://www.credly.com/users/priyashan-gamacharige/badges#credly" 
+                       target="_blank" 
+                       class="verify-btn">
+                        <i class='bx bx-check-shield'></i> Verify on Credly
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Oracle Cloud Infrastructure Foundations Associate -->
+            <div class="certification-card">
+                <div class="cert-img-container">
+                    <img src="Assets/OCIFND.png" 
+                         alt="Oracle  Certification">
+                </div>
+                <div class="cert-content">
+                    <h3>OCI Foundations Associate</h3>
+                    <div class="issuer">
+                        <i class='bx bxs-cloud'></i>
+                        <span>Oracle </span>
+                    </div>
+                    <div class="date">
+                        Issued: Sep 2025 | Expires: Sep 2027
+                    </div>
+                    <p>Validates foundational knowledge of cloud concepts, core OCI services, and basic cloud architecture and security principles.</p>
+                    <a href="https://www.credly.com/users/priyashan-gamacharige/badges#credly" 
+                       target="_blank" 
+                       class="verify-btn">
+                        <i class='bx bx-check-shield'></i> Verify on Credly
+                    </a>
+                </div>
+            </div>
+
+           <!-- IT Essential -->
+            <div class="certification-card">
+                <div class="cert-img-container">
+                    <img src="Assets/ITESS.png" 
+                         alt="IT Essential Certification">
+                </div>
+                <div class="cert-content">
+                    <h3>IT Essential</h3>
+                    <div class="issuer">
+                        <i class='bx bxs-building-house'></i>
+                        <span>Cisco Networking Academy</span>
+
+                    </div>
+                    <div class="date">
+                        Date issued: July 17, 2025
+                    </div>
+                    <p>Validates fundamental knowledge of computer hardware, software, networking, and troubleshooting skills.</p>
+                    <a href="https://www.credly.com/users/priyashan-gamacharige/badges#credly" 
+                       target="_blank" 
+                       class="verify-btn">
+                        <i class='bx bx-check-shield'></i> Verify on Credly
+                    </a>
+                </div>
+            </div>
+            
+            <!-- AI Fundamentals-->
+            <div class="certification-card">
+                <div class="cert-img-container">
+                    <img src="Assets/IBMAI.png" 
+                         alt="ai fundementals">
+                </div>
+                <div class="cert-content">
+                    <h3>AI Fundamentals</h3>
+                    <div class="issuer">
+                        <i class='bx bxs-cube'></i>
+                         <span> IBM SkillsBuild</span>
+                    </div>
+                    <div class="date">
+                        Date issued: October 31, 2024
+                    </div>
+                    <p>Validates foundational understanding of artificial intelligence concepts, applications, and basic AI technologies.</p>
+                    <a href="https://www.credly.com/users/priyashan-gamacharige/badges#credly" 
+                       target="_blank" 
+                       class="verify-btn">
+                        <i class='bx bx-check-shield'></i> Verify on Credly
+                    </a>
+                </div>
+            </div>
+            
+            
+<!-- Networking Basics -->
+            <div class="certification-card">
+                <div class="cert-img-container">
+                    <img src="Assets/NETB.png" 
+                         alt="Networking Basics Certification">
+                </div>
+                <div class="cert-content">
+                    <h3>Networking Basics</h3>
+                    <div class="issuer">
+                        <i class='bx bxs-building-house'></i>
+                        <span>Cisco Networking Academy</span>
+                    </div>
+                    <div class="date">
+                        Date issued: May 03, 2025
+                    </div>
+                    <p>Validates fundamental understanding of networking concepts, protocols, and basic network operations.</p>
+                    <a href="https://www.credly.com/users/priyashan-gamacharige/badges#credly" 
+                       target="_blank" 
+                       class="verify-btn">
+                        <i class='bx bx-check-shield'></i> Verify on Credly
+                    </a>
+                </div>
+            </div>
+
+<!-- Introduction to Cybersecurity-->
+            <div class="certification-card">
+                <div class="cert-img-container">
+                    <img src="Assets/INCS.png" 
+                         alt="Introduction to Cybersecurity Certification">
+                </div>
+                <div class="cert-content">
+                    <h3>Introduction to Cybersecurity</h3>
+                    <div class="issuer">
+                        <i class='bx bxs-building-house'></i>
+                        <span>Cisco Networking Academy</span>
+                    </div>
+                    <div class="date">
+                        Date issued: March 19, 2025
+                    </div>
+                    <p>Validates foundational knowledge of cybersecurity concepts, threats, and best practices for protecting digital systems.</p>
+                    <a href="https://www.credly.com/users/priyashan-gamacharige/badges#credly" 
+                       target="_blank" 
+                       class="verify-btn">
+                        <i class='bx bx-check-shield'></i> Verify on Credly
+                    </a>
+                </div>
+            </div>
+
+            
+            <!-- Introduction to IoT -->
+            <div class="certification-card">
+                <div class="cert-img-container">
+                    <img src="Assets/IOT.png" 
+                         alt="Introduction to IoT Certification">
+                </div>
+                <div class="cert-content">
+                    <h3>Introduction to IoT</h3>
+                    <div class="issuer">
+                        <i class='bx bxs-building-house'></i>
+                        <span>Cisco Networking Academy</span>
+                    </div>
+                    <div class="date">
+                        Date issued: May 03, 2025
+                    </div>
+                    <p>Validates foundational understanding of the Internet of Things, including connected devices, data exchange, and IoT applications.</p>
+                    <a href="https://www.credly.com/users/priyashan-gamacharige/badges#credly" 
+                       target="_blank" 
+                       class="verify-btn">
+                        <i class='bx bx-check-shield'></i> Verify on Credly
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="local-certifications-container">
+        <h1> Certifications</h1>
+        
+        <div class="local-cert-grid">
+<!-- CS50P: Introduction to Programming with Python -->
+<div class="local-certification-card">
+    <div class="local-cert-img-container">
+        <img src="Assets/python.png" 
+             alt="CS50P Introduction to Programming with Python Certificate">
+    </div>
+    <div class="local-cert-content">
+        <h3>CS50P: Introduction to Programming with Python</h3>
+        <div class="cert-id">No Certificate ID</div>
+        <div class="issuer">
+            <i class='bx bxs-graduation'></i>
+            <span>edX</span>
+        </div>
+        <div class="date">
+            Issued: Jan 2026 | No Expiration
+        </div>
+        <p>
+            Comprehensive introduction to Python programming covering core computer science 
+            concepts, problem-solving, data structures, SQL, and web development fundamentals.
+        </p>
+    </div>
+</div>
+<!-- ISO/IEC 27001:2022 Information Security Associate -->
+<div class="local-certification-card">
+    <div class="local-cert-img-container">
+        <img src="Assets/iso.png" 
+             alt="ISO IEC 27001 Information Security Associate Certificate">
+    </div>
+    <div class="local-cert-content">
+        <h3>ISO/IEC 27001:2022 Information Security Associate™</h3>
+        <div class="cert-id">42510854287324</div>
+        <div class="issuer">
+            <i class='bx bxs-certification'></i>
+            <span>SkillFront</span>
+        </div>
+        <div class="date">
+            Issued: Dec 2025
+        </div>
+        <p>
+            Accredited professional certification validating knowledge in ISO/IEC 27001:2022 
+            information security management systems (ISMS), risk management, compliance, 
+            and security governance principles.
+        </p>
+    </div>
+</div>
+<!-- Cybersecurity & Ethical Hacking -->
+<div class="local-certification-card">
+    <div class="local-cert-img-container">
+        <img src="Assets/cseh.png" 
+             alt="Cybersecurity and Ethical Hacking Certificate">
+    </div>
+    <div class="local-cert-content">
+        <h3>Cybersecurity & Ethical Hacking</h3>
+        <div class="cert-id">0725CSEH1320</div>
+        <div class="issuer">
+            <i class='bx bxs-school'></i>
+            <span>Future Robotics (PVT) LTD</span>
+        </div>
+        <div class="date">
+            Issued: Nov 2025 
+        </div>
+        <p>
+            Intensive hands-on training in ethical hacking, penetration testing, 
+            OWASP Top 10, Metasploit, Nmap, SIEM (Splunk), Wireshark, and digital forensics. 
+            Achieved Grade A+ (98/100).
+        </p>
+    </div>
+</div>
+            <!-- Windows Server and Network Engineering -->
+            <div class="local-certification-card">
+                <div class="local-cert-img-container">
+                    <img src="Assets/WINSERNET.png" 
+                         alt="Windows Server and Network Engineering Certificate">
+                </div>
+                <div class="local-cert-content">
+                    <h3>Windows Server and Network Engineering</h3>
+                    <div class="cert-id">20DaysWS24B2T036</div>
+                    <div class="issuer">
+                        <i class='bx bxs-school'></i>
+                        <span>NextGen Campus</span>
+                    </div>
+                    <div class="date">
+                        Issued: Mar 2025
+                    </div>
+                    <p>Completed a 4-month intensive course covering Windows Server, computer networking, and Active Directory, with extensive hands on lab                      experience, aimed at preparing for a professional role in IT and network administration.</p> 
+                </div>
+            </div>
+            
+            <!-- Huawei 5G Basic -->
+            <div class="local-certification-card">
+                <div class="local-cert-img-container">
+                    <img src="Assets/5G Basic.png" 
+                         alt="Huawei 5G Basic">
+                </div>
+                <div class="local-cert-content">
+                    <h3>Huawei 5G Basic</h3><br>
+                    <div class="cert-id">ICT20250829005454</div>
+                    <div class="issuer">
+                        <i class='bx bxs-chip'></i>
+                        <span>Huawei</span>
+                    </div>
+                    <div class="date">
+                        Issued: August 2025
+                    </div>
+                    <p>Completed Huawei 5G Basic Course, gaining foundational knowledge of 5G technologies, network architecture, and deployment concepts.</p>
+                </div>
+            </div>
+            
+            <!-- Could computing 101 -->
+            <div class="local-certification-card">
+                <div class="local-cert-img-container">
+                    <img src="Assets/cloud.png" 
+                         alt="Could computing">
+                </div>
+                <div class="local-cert-content">
+                    <h3>Could Computing 101</h3><br>
+                    <div class="cert-id">9b6e7a33-5947-418-a62c-ccd2da8be47b</div>
+                    <div class="issuer">
+                        <i class='bx bxs-school'></i>
+                        <span>Learnfi</span>
+                    </div>
+                    <div class="date">
+                        Issued: November 2024                  
+                       </div>
+                    <p>Gained foundational skills in Cloud Computing, including cloud concepts, cloud basics, and cloud application usage.</p>
+                </div>
+            </div>
+            
+            <!-- CCCertified in Cybersecurity  -->
+            <div class="local-certification-card">
+                <div class="local-cert-img-container">
+                    <img src="Assets/ISCCC.png" 
+                         alt="CCCertified in Cybersecurity  Certificate">
+                </div>
+                <div class="local-cert-content">
+                    <h3>Certified in Cybersecurity (CC)</h3>
+                    <div class="cert-id"> 6486f12b-6e9b-4d65-9912-c525d07748c7</div>
+                    <div class="issuer">
+                        <i class='bx bxs-shield'></i>
+                        <span>ISC²</span>
+                    </div>
+                    <div class="date">
+                        Issued: October 2024
+                    </div>
+                    <p>Gained foundational cybersecurity skills, including threat detection, risk management, and basic security practices for digital systems.</p>
+                </div>
+            </div>
+
+
+
+ <!-- Hardware Course certification  -->
+            <div class="local-certification-card">
+                <div class="local-cert-img-container">
+                    <img src="Assets/HC.jpg" 
+                         alt="Hardware Certificate">
+                </div>
+                <div class="local-cert-content">
+                    <h3>Computer Hardware Engineering</h3>
+                    <div class="cert-id">CHE/25/JUL/B1/002</div>
+                    <div class="issuer">
+                        <i class='bx bxs-school'></i>
+                        <span>Southland Campus</span>
+                    </div>
+                    <div class="date">
+                        Issued: August 2025
+                    </div>
+                    <p>Successfully completed the Advanced Certificate in Computer Hardware Engineering at Southland Campus, demonstrating practical knowledge in computer systems and hardware maintenance.</p>
+                </div>
+            </div>
+ <!-- English course -->
+            <div class="local-certification-card">
+                <div class="local-cert-img-container">
+                    <img src="Assets/ENC.jpg" 
+                         alt="English Certificate">
+                </div>
+                <div class="local-cert-content">
+                    <h3>Foundation English Course</h3>
+                    <div class="cert-id">No Certificate ID</div>
+                    <div class="issuer">
+                        <i class='bx bxs-school'></i>
+                        <span>The Foundation English Academy</span>
+                    </div>
+                    <div class="date">
+                        Issued: February 2023
+                    </div>
+                    <p>Successfully completed “The General Dialogue English Course” at The Foundation English Academy, affiliated with Highstudy Institution, achieving an overall grade of A.</p>
+                </div>
+            </div>
+ <!-- AL certification   -->
+            <div class="local-certification-card">
+                <div class="local-cert-img-container">
+                    <img src="Assets/AL.jpg" 
+                         alt="CCCertified in Cybersecurity  Certificate">
+                </div>
+                <div class="local-cert-content">
+                    <h3>G.C.E. Advanced Level</h3>
+                    <div class="cert-id">Index No : 6239064</div>
+                    <div class="issuer">
+                        <i class='bx bxs-school'></i>
+                        <span>Dept . Of Examination , SL</span>
+                    </div>
+                    <div class="date">
+                        Issued: January 2023
+                    </div>
+                    <p>Passed the G.C.E. Advanced Level Examination in 2021 in the Technology Stream with one A, one B, one C, and one S, achieving a Z-Score of 1.7589 and securing District Rank 28.</p>
+                </div>
+            </div>
+ <!-- OL certification  -->
+            <div class="local-certification-card">
+                <div class="local-cert-img-container">
+                    <img src="Assets/OL.jpg" 
+                         alt="CCCertified in Cybersecurity  Certificate">
+                </div>
+                <div class="local-cert-content">
+                    <h3>G.C.E. Ordinary Level</h3>
+                    <div class="cert-id">Index No : 71774050</div>
+                    <div class="issuer">
+                        <i class='bx bxs-school'></i>
+                        <span>Dept . Of Examination , SL</span>
+                    </div>
+                    <div class="date">
+                        Issued: September 2018
+                    </div>
+                    <p>Passed the G.C.E. Ordinary Level Examination in 2017 with five A’s, one B, two C’s, and one S, including Mathematics, Science, English, and Sinhala.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // Add slight 3D tilt effect to all certification cards
+        document.querySelectorAll('.certification-card, .local-certification-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const xAxis = (card.offsetWidth / 2 - e.pageX) / 25;
+                const yAxis = (card.offsetHeight / 2 - e.pageY) / 25;
+                card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) translateY(-10px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'rotateY(0) rotateX(0) translateY(-10px)';
+            });
+        });
+
+        // Add tilt effect to circular image
+        const imgBox = document.querySelector('.img-box');
+        
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            imgBox.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Reset position when mouse leaves
+        document.addEventListener('mouseleave', () => {
+            imgBox.style.transform = 'rotateY(0) rotateX(0)';
+        });
+    </script>
+</body>
+</html>
